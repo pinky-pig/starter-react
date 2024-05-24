@@ -11,7 +11,5 @@ export default {
   build: {
     chunkSizeWarningLimit: 5000,
   },
-  plugins: [
-    react(),
-  ],
+  plugins: [react()],
 }

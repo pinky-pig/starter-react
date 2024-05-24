@@ -12,9 +12,7 @@ export function Home() {
 
         <AppIcon className="w-12 h-12 inline-block mb-4" />
 
-        <h1 className="text-4xl font-bold mb-2">
-          Starter React
-        </h1>
+        <h1 className="text-4xl font-bold mb-2">Starter React</h1>
 
         <p>
           <em className="text-sm opacity-75">A simple template for React.</em>
@@ -40,9 +38,7 @@ export function Home() {
         <br />
         <br />
         <TheFooter />
-
       </div>
-
     </>
   )
 }

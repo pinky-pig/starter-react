@@ -1,4 +1,7 @@
-export default function SketchButton({ children, ...props }: {
+export default function SketchButton({
+  children,
+  ...props
+}: {
   children?: React.ReactNode
 }) {
   return (

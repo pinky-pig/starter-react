@@ -1,2 +1,1 @@
-export function toggleDark(_event: MouseEvent) {
-}
+export function toggleDark(_event: MouseEvent) {}
