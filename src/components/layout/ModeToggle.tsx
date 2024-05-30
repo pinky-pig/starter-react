@@ -6,7 +6,7 @@ import { useTheme } from './ThemeProvider'
 export function ModeToggleLite() {
   const { theme, setTheme } = useTheme()
 
-  async function toggleDark(event: React.MouseEvent) {
+  function toggleDark(event: React.MouseEvent) {
     // @ts-ignore
     // prettier-ignore
     const isAppearanceTransition = document.startViewTransition && !window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -22,29 +22,30 @@ export function ModeToggleLite() {
       Math.max(y, innerHeight - y),
     )
 
-    await document.startViewTransition(() => {
+    const transition = document.startViewTransition(() => {
       flushSync(() => {
         setTheme(theme === 'dark' ? 'light' : 'dark')
       })
-    }).ready
-
-    const clipPath = [
-      `circle(0px at ${x}px ${y}px)`,
-      `circle(${endRadius}px at ${x}px ${y}px)`,
-    ]
-    document.documentElement.animate(
-      {
-        clipPath: theme === 'light' ? [...clipPath].reverse() : clipPath,
-      },
-      {
-        duration: 500,
-        easing: 'ease-in-out',
-        pseudoElement:
-          theme === 'light'
-            ? '::view-transition-old(root)'
-            : '::view-transition-new(root)',
-      },
-    )
+    })
+    transition.ready.then(() => {
+      const clipPath = [
+        `circle(0px at ${x}px ${y}px)`,
+        `circle(${endRadius}px at ${x}px ${y}px)`,
+      ]
+      document.documentElement.animate(
+        {
+          clipPath: theme === 'light' ? [...clipPath].reverse() : clipPath,
+        },
+        {
+          duration: 400,
+          easing: 'ease-out',
+          pseudoElement:
+            theme === 'light'
+              ? '::view-transition-old(root)'
+              : '::view-transition-new(root)',
+        },
+      )
+    })
   }
 
   return (
