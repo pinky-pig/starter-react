@@ -1,9 +1,9 @@
+import { ModeToggleLite } from './ModeToggle'
+
 export default function TheFooter() {
   return (
     <nav className="mt-6 inline-flex gap-2 text-xl px-8 py-4">
-      <button>
-        <div className="i-carbon-sun dark:i-carbon-moon text-2xl" />
-      </button>
+      <ModeToggleLite></ModeToggleLite>
 
       <a
         className="i-carbon-logo-github text-2xl"

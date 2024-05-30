@@ -3,10 +3,11 @@ import { Button } from '@/components/ui/button'
 import AppIcon from '@/components/icons/AppIcon'
 import IconifyDemo from '@/components/demo/IconifyDemo'
 import TheFooter from '@/components/layout/TheFooter'
+import { ThemeProvider } from '@/components/layout/ThemeProvider'
 
 export function Home() {
   return (
-    <>
+    <ThemeProvider defaultTheme="dark">
       <div className="w-full h-full flex flex-col items-center justify-center text-center px-4 pt-10">
         <div className="py-8" />
 
@@ -39,7 +40,7 @@ export function Home() {
         <br />
         <TheFooter />
       </div>
-    </>
+    </ThemeProvider>
   )
 }
 
