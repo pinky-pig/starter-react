@@ -58,7 +58,6 @@
     "jsdom": "^24.0.0",
     "pnpm": "^9.1.1",
     "postcss": "^8.4.38",
-    "radix-vue": "^1.7.4",
     "rimraf": "^5.0.7",
     "shadcn-vue": "^0.10.4",
     "simple-git": "^3.24.0",
